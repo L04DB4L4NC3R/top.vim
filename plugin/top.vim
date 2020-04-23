@@ -1,5 +1,5 @@
 function! MetaToList()
-	normal :%s/,/\r\t\*/glkk/0i	* nni€kb€kb€kb€kb€kb€kb€kbnni€kb€kb€kb€kb€kb€kb€kbjjh
+	normal :%s/,/\r\t\*/glxxxxxxxkxxxxxxxkf:lxxxxxxxi	*€ýakI* €ýa/KiBNi* /%Cpui* /Tak€kbsksi* €ýa/topNi* €ýa
 endfunction
 
 function! MakeTable()
@@ -8,7 +8,8 @@ function! MakeTable()
 	28,$s/\s\+/|/g
 	28,$s/$/|/
 	28,$s/^/|/
-	call append(29, "|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|")
+	let l:foundline = search("PID")
+	call append(l:foundline, "|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|")
 endfunction
 
 function! FillTop()
@@ -17,9 +18,9 @@ endfunction
 
 
 function! InsertAndConvert()
-		call FillTop()<CR><CR>
-		call MetaToList()<CR><CR>
 		call FillTop()<CR>
+		call MetaToList()<CR>
+		call MakeTable()<CR>
 endfunction
 
-nnoremap tree :call InsertAndConvert()<CR><CR>
+nnoremap tpmd :call InsertAndConvert()<CR><CR>
