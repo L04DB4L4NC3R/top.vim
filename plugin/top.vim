@@ -19,6 +19,14 @@ function! FillTop()
 		.! top -n 1 -b
 endfunction
 
+function! FillTopN(n)
+		if a:n < 8
+				execute ".! top -n 1 -d 5 -b|grep 'load average' -A 8"
+		else
+				execute ".! top -n 1 -d 5 -b|grep 'load average' -A ".a:n
+		endif
+endfunction
+
 
 function! InsertAndConvert()
 		call FillTop()<CR>
@@ -26,4 +34,18 @@ function! InsertAndConvert()
 		call MakeTable()<CR>
 endfunction
 
+function! InsertAndConvertN(n)
+		call FillTopN(a:n)<CR>
+		call MetaToList()<CR>
+		call MakeTable()<CR>
+endfunction
+
 nnoremap tpmd :call InsertAndConvert()<CR><CR>
+nnoremap tpmt :<c-u>call InsertAndConvertN(v:count1)<CR><CR>
+
+
+
+
+
+
+
