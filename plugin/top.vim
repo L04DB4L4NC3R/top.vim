@@ -5,13 +5,13 @@ endfunction
 function! MakeTable()
 	let l = search("PID")
 	mark x
+	call append(l, "|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|")
 	%s/Web Content/Web-Content/g 
 	echom l:foundline
 	'x,$s/^\s\+//
 	'x,$s/$/|/
 	'x,$s/^/|/
 	'x,$s/\s\+/|/g
-	call append('x, "|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|")
 	delmark x
 endfunction
 
