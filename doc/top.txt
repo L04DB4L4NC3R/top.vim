@@ -1,0 +1,7 @@
+Top is a vim plugin which converts the typical output of the top command in linux into markdown list format.
+
+
+| Mode | Mapping | Action |
+|:----:|:-------:|:------:|
+| Normal | tpmd | Convert to markdown |
+| Normal | [num]tpmt | Print top 'num' lines (>= 8) |
