@@ -1,15 +1,18 @@
 function! MetaToList()
-	normal :%s/,/\r\t\*/glxxxxxxxkxxxxxxxkf:lxxxxxxxi	*€ýakI* €ýa/KiBNi* /%Cpui* /Tak€kbsksi* €ýa/topNi* €ýa
+	normal :.,$s/,/\r\t\*/glxxxxxxxkxxxxxxxkf:lxxxxxxxi	*€ýakI* €ýa/KiBNi* /%Cpui* /Tak€kbsksi* €ýa/topNi* €ýa
 endfunction
 
 function! MakeTable()
+	let l = search("PID")
+	mark x
 	%s/Web Content/Web-Content/g 
-	28,$s/^\s\+//
-	28,$s/\s\+/|/g
-	28,$s/$/|/
-	28,$s/^/|/
-	let l:foundline = search("PID")
-	call append(l:foundline, "|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|")
+	echom l:foundline
+	'x,$s/^\s\+//
+	'x,$s/$/|/
+	'x,$s/^/|/
+	'x,$s/\s\+/|/g
+	call append('x, "|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|")
+	delmark x
 endfunction
 
 function! FillTop()
