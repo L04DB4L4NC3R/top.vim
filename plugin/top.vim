@@ -49,7 +49,6 @@ endfunction
 " Insert top from the cmd line
 " Make a list
 " Make a table
-function! InsertAndConvertN(n)
 function! InsertAndConvert()
 		call FillTop()<CR>
 		call MetaToList()<CR>
